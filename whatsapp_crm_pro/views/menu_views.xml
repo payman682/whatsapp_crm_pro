@@ -1,0 +1,56 @@
+<odoo>
+    <!-- Dashboard action -->
+    <record id="action_whatsapp_dashboard" model="ir.actions.act_window">
+        <field name="name">WhatsApp Dashboard</field>
+        <field name="res_model">whatsapp.crm.message</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Accounts action -->
+    <record id="action_whatsapp_crm_accounts" model="ir.actions.act_window">
+        <field name="name">WhatsApp Accounts</field>
+        <field name="res_model">whatsapp.crm.account</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Messages action -->
+    <record id="action_whatsapp_crm_messages" model="ir.actions.act_window">
+        <field name="name">WhatsApp Messages</field>
+        <field name="res_model">whatsapp.crm.message</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Root app menu -->
+    <menuitem
+        id="menu_whatsapp_crm_root"
+        name="WhatsApp CRM"
+        sequence="1"
+        web_icon="whatsapp_crm_pro,static/description/icon.png"
+        action="action_whatsapp_dashboard"
+    />
+
+    <!-- Child menus -->
+    <menuitem
+        id="menu_whatsapp_crm_dashboard"
+        name="Dashboard"
+        parent="menu_whatsapp_crm_root"
+        action="action_whatsapp_dashboard"
+        sequence="1"
+    />
+
+    <menuitem
+        id="menu_whatsapp_crm_messages"
+        name="Messages"
+        parent="menu_whatsapp_crm_root"
+        action="action_whatsapp_crm_messages"
+        sequence="2"
+    />
+
+    <menuitem
+        id="menu_whatsapp_crm_accounts"
+        name="Accounts"
+        parent="menu_whatsapp_crm_root"
+        action="action_whatsapp_crm_accounts"
+        sequence="3"
+    />
+</odoo>

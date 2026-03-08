@@ -1,0 +1,86 @@
+<odoo>
+    <record id="view_whatsapp_crm_account_tree" model="ir.ui.view">
+        <field name="name">whatsapp.crm.account.tree</field>
+        <field name="model">whatsapp.crm.account</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="company_id"/>
+                <field name="display_phone"/>
+                <field name="phone_number_id"/>
+                <field name="team_id"/>
+                <field name="message_count"/>
+                <field name="last_webhook_at"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_whatsapp_crm_account_form" model="ir.ui.view">
+        <field name="name">whatsapp.crm.account.form</field>
+        <field name="model">whatsapp.crm.account</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_view_messages" type="object" string="Messages" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="active"/>
+                            <field name="sequence"/>
+                            <field name="company_id"/>
+                            <field name="display_phone"/>
+                            <field name="phone_number_id"/>
+                            <field name="business_account_id"/>
+                            <field name="graph_api_version"/>
+                        </group>
+                        <group>
+                            <field name="verify_token"/>
+                            <field name="webhook_path" readonly="1"/>
+                            <field name="access_token" password="True"/>
+                            <field name="last_webhook_at" readonly="1"/>
+                            <field name="message_count" readonly="1"/>
+                            <field name="inbound_message_count" readonly="1"/>
+                            <field name="outbound_message_count" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Automation">
+                            <group>
+                                <field name="auto_create_lead"/>
+                                <field name="auto_reply_enabled"/>
+                                <field name="auto_reply_template" invisible="not auto_reply_enabled"/>
+                                <field name="auto_assign_salesperson"/>
+                                <field name="salesperson_id" invisible="not auto_assign_salesperson"/>
+                                <field name="team_id"/>
+                                <field name="lead_prefix"/>
+                            </group>
+                        </page>
+                        <page string="Messages">
+                            <field name="message_ids" readonly="1">
+                                <list>
+                                    <field name="message_date"/>
+                                    <field name="customer_name"/>
+                                    <field name="customer_phone"/>
+                                    <field name="direction"/>
+                                    <field name="message_type"/>
+                                    <field name="state"/>
+                                    <field name="body"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_whatsapp_crm_accounts" model="ir.actions.act_window">
+        <field name="name">WhatsApp Accounts</field>
+        <field name="res_model">whatsapp.crm.account</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

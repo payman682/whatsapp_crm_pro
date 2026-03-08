@@ -1,0 +1,33 @@
+<odoo>
+    <record id="view_whatsapp_crm_lead_pivot" model="ir.ui.view">
+        <field name="name">crm.lead.whatsapp.pivot</field>
+        <field name="model">crm.lead</field>
+        <field name="arch" type="xml">
+            <pivot string="WhatsApp Leads">
+                <field name="create_date" interval="month" type="col"/>
+                <field name="user_id" type="row"/>
+                <field name="whatsapp_lead_score" type="measure"/>
+                <field name="id" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_whatsapp_crm_lead_graph" model="ir.ui.view">
+        <field name="name">crm.lead.whatsapp.graph</field>
+        <field name="model">crm.lead</field>
+        <field name="arch" type="xml">
+            <graph string="WhatsApp Leads" type="bar">
+                <field name="create_date" interval="month"/>
+                <field name="id" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="action_whatsapp_dashboard" model="ir.actions.act_window">
+        <field name="name">WhatsApp Dashboard</field>
+        <field name="res_model">crm.lead</field>
+        <field name="view_mode">graph,pivot,list,form</field>
+        <field name="domain">[("whatsapp_phone","!=",False)]</field>
+        <field name="context">{'search_default_group_by_user_id': 1}</field>
+    </record>
+</odoo>

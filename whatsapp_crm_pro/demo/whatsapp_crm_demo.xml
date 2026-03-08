@@ -1,0 +1,13 @@
+<odoo>
+    <record id="whatsapp_crm_demo_account" model="whatsapp.crm.account">
+        <field name="name">Demo WhatsApp Number</field>
+        <field name="company_id" ref="base.main_company"/>
+        <field name="phone_number_id">1234567890</field>
+        <field name="display_phone">+1 555 010 100</field>
+        <field name="verify_token">demo_verify_token</field>
+        <field name="lead_prefix">WA</field>
+        <field name="auto_create_lead">True</field>
+        <field name="auto_reply_enabled">True</field>
+        <field name="auto_reply_template">Hello 👋 Thanks for contacting us. A sales advisor will reply shortly.</field>
+    </record>
+</odoo>

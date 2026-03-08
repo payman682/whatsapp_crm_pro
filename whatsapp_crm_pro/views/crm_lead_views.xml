@@ -1,0 +1,50 @@
+<odoo>
+    <record id="crm_lead_view_form_whatsapp_inherit" model="ir.ui.view">
+        <field name="name">crm.lead.form.whatsapp.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet//div[hasclass('oe_button_box')]" position="inside">
+                <button name="action_view_whatsapp_messages" type="object" class="oe_stat_button" icon="fa-whatsapp">
+                    <field name="whatsapp_message_count" widget="statinfo" string="WhatsApp"/>
+                </button>
+                <button name="action_open_send_whatsapp_wizard" type="object" class="oe_stat_button" icon="fa-paper-plane" invisible="not whatsapp_phone">
+                    <div class="o_stat_info"><span class="o_stat_text">Reply</span></div>
+                </button>
+            </xpath>
+            <xpath expr="//sheet//group" position="inside">
+                <group string="WhatsApp CRM">
+                    <field name="whatsapp_phone"/>
+                    <field name="whatsapp_account_id"/>
+                    <field name="whatsapp_intent"/>
+                    <field name="whatsapp_lead_score"/>
+                    <field name="whatsapp_hot"/>
+                    <field name="whatsapp_last_inbound_at"/>
+                    <field name="whatsapp_last_message"/>
+                    <field name="whatsapp_summary"/>
+                    <field name="whatsapp_next_action" readonly="1"/>
+                    <field name="whatsapp_recommended_reply" widget="text" readonly="1"/>
+                </group>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="WhatsApp Timeline">
+                    <group>
+                        <field name="whatsapp_timeline_html" widget="html" readonly="1" nolabel="1"/>
+                    </group>
+                </page>
+                <page string="WhatsApp Messages">
+                    <field name="whatsapp_message_ids" readonly="1">
+                        <list default_order="message_date desc">
+                            <field name="message_date"/>
+                            <field name="direction"/>
+                            <field name="message_type"/>
+                            <field name="state"/>
+                            <field name="message_status"/>
+                            <field name="body"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

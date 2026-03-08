@@ -1,0 +1,23 @@
+<odoo>
+    <record id="res_config_settings_view_form_whatsapp_crm_pro" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.whatsapp.crm.pro</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app string="WhatsApp CRM" name="whatsapp_crm_pro">
+                    <block title="Lead capture">
+                        <setting string="Auto-create lead from WhatsApp message" help="When disabled, incoming WhatsApp messages are logged without creating CRM leads.">
+                            <field name="whatsapp_crm_auto_create_lead"/>
+                        </setting>
+                    </block>
+                    <block title="Follow-up automation">
+                        <setting string="Default follow-up message">
+                            <field name="whatsapp_crm_followup_template"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+</odoo>
