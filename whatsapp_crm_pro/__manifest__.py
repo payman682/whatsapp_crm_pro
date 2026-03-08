@@ -2,6 +2,7 @@
 {
     'name': 'WhatsApp CRM Pro – Meta WhatsApp Integration',
     'summary': 'WhatsApp CRM integration for Odoo. Convert WhatsApp Business messages into CRM leads and reply directly from Odoo CRM.',
+    'keywords': ['whatsapp', 'whatsapp crm', 'whatsapp integration'],
     "description": """
 WhatsApp CRM Pro
 ================
