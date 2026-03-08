@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    "name": "WhatsApp CRM Pro (Meta Cloud API)",
+    'name': 'WhatsApp CRM Pro – Meta WhatsApp Integration'
     "summary": "Convert WhatsApp conversations into CRM leads and reply directly from Odoo.",
     "description": """
 WhatsApp CRM Pro
@@ -25,7 +25,7 @@ Setup
 3. Add webhook URL in Meta
 4. Start receiving and replying to messages
 """,
-    "version": "19.0.3.0.0",
+    "version": "19.0.3.0.1",
     "author": "Forklift Plus inc.",
     "website": "https://forkliftplus.com",
     "license": "LGPL-3",
