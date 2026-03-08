@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'WhatsApp CRM Pro – Meta WhatsApp Integration'
+    'name': 'WhatsApp CRM Pro – Meta WhatsApp Integration',
     "summary": "Convert WhatsApp conversations into CRM leads and reply directly from Odoo.",
     "description": """
 WhatsApp CRM Pro
