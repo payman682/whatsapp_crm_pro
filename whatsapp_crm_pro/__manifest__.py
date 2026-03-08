@@ -30,7 +30,7 @@ Setup
     "website": "https://forkliftplus.com",
     "license": "LGPL-3",
     "category": "Sales/CRM",
-    "price": 89,
+    "price": 59,
     "currency": "USD",
     "depends": [
         "base",
