@@ -57,7 +57,7 @@ Setup
         "demo/whatsapp_crm_demo.xml",
     ],
     "images": [
-        "static/description/banner.png",
+        "static/description/cover.png",
     ],
     "installable": True,
     "application": True,
